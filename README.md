@@ -391,76 +391,7 @@ services:
 
 <span class="pl-ent">metrics</span>:
   <span class="pl-ent">enabled</span>: <span class="pl-s">true </span><span class="pl-c"><span class="pl-c">#</span> 'true' to enable Info APIs (`/api/*`) endpoints, 'false' to disable</span></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="security:
-  enableLogin: false # set to 'true' to enable login
-  csrfDisabled: true # Set to 'true' to disable CSRF protection (not recommended for production)
-  loginAttemptCount: 5 # lock user account after 5 tries
-  loginResetTimeMinutes: 120 # lock account for 2 hours after x attempts
-#  initialLogin:
-#    username: &quot;admin&quot; # Initial username for the first login
-#    password: &quot;stirling&quot; # Initial password for the first login
-#  oauth2:
-#    enabled: false # set to 'true' to enable login (Note: enableLogin must also be 'true' for this to work)
-#    issuer: &quot;&quot; # set to any provider that supports OpenID Connect Discovery (/.well-known/openid-configuration) end-point
-#    clientId: &quot;&quot; # Client ID from your provider
-#    clientSecret: &quot;&quot; # Client Secret from your provider
-#    autoCreateUser: false # set to 'true' to allow auto-creation of non-existing users
-#    useAsUsername: &quot;email&quot; # Default is 'email'; custom fields can be used as the username
-#    scopes: &quot;openid, profile, email&quot; # Specify the scopes for which the application will request permissions
-#    provider: &quot;google&quot; # Set this to your OAuth provider's name, e.g., 'google' or 'keycloak'
-#    client:
-#      google:
-#        clientId: &quot;&quot; # Client ID for Google OAuth2
-#        clientSecret: &quot;&quot; # Client Secret for Google OAuth2
-#        scopes: &quot;https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile&quot; # Scopes for Google OAuth2
-#        useAsUsername: &quot;email&quot; # Field to use as the username for Google OAuth2
-#      github:
-#        clientId: &quot;&quot; # Client ID for GitHub OAuth2
-#        clientSecret: &quot;&quot; # Client Secret for GitHub OAuth2
-#        scopes: &quot;read:user&quot; # Scope for GitHub OAuth2
-#        useAsUsername: &quot;login&quot; # Field to use as the username for GitHub OAuth2
-#      keycloak:
-#        issuer: &quot;http://192.168.0.123:8888/realms/stirling-pdf&quot; # URL of the Keycloak realm's OpenID Connect Discovery endpoint
-#        clientId: &quot;stirling-pdf&quot; # Client ID for Keycloak OAuth2
-#        clientSecret: &quot;&quot; # Client Secret for Keycloak OAuth2
-#        scopes: &quot;openid, profile, email&quot; # Scopes for Keycloak OAuth2
-#        useAsUsername: &quot;email&quot; # Field to use as the username for Keycloak OAuth2
-
-system:
-  defaultLocale: 'en-US' # Set the default language (e.g. 'de-DE', 'fr-FR', etc)
-  googlevisibility: false # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
-  enableAlphaFunctionality: false # Set to enable functionality which might need more testing before it fully goes live (This feature might make no changes)
-  showUpdate: true # see when a new update is available
-  showUpdateOnlyAdmin: false # Only admins can see when a new update is available, depending on showUpdate it must be set to 'true'
-  customHTMLFiles: false # enable to have files placed in /customFiles/templates override the existing template html files
-
-ui:
-  appName: null # Application's visible name
-  homeDescription: null # Short description or tagline shown on homepage.
-  appNameNavbar: null # Name displayed on the navigation bar
-
-endpoints:
-  toRemove: [] # List endpoints to disable (e.g. ['img-to-pdf', 'remove-pages'])
-  groupsToRemove: [] # List groups to disable (e.g. ['LibreOffice'])
-
-metrics:
-  enabled: true # 'true' to enable Info APIs (`/api/*`) endpoints, 'false' to disable" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
-  </div></div>
-<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有一个额外的配置文件，</font></font><code>/configs/custom_settings.yml</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">熟悉 java 和 spring 应用程序的用户可以在 Stirling-PDF 现有设置之上输入自己的设置</font></font></p>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">补充说明</font></font></h3><a id="user-content-extra-notes" class="anchor" aria-label="永久链接：附加说明" href="#extra-notes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<ul dir="auto">
-<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">端点。目前，端点 ENDPOINTS_TO_REMOVE 和 GROUPS_TO_REMOVE 可以包含要禁用的端点和组的逗号分隔列表，例如 ENDPOINTS_TO_REMOVE=img-to-pdf,remove-pages 将禁用 image-to-pdf 和删除页面，GROUPS_TO_REMOVE=LibreOffice 将禁用所有使用 LibreOffice 的东西。您可以</font></font><a href="https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Endpoint-groups.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此处查看所有端点和组的列表</font></font></a></li>
-<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">customStaticFilePath。通过将文件放置在 /customFiles/static/ 目录中来自定义静态文件（例如应用程序徽标）。自定义应用程序徽标的一个示例是放置 /customFiles/static/favicon.svg 以覆盖当前 SVG。这可用于更改 Stirling-PDF 中的任何图像/图标/css/字体/js 等</font></font></li>
-</ul>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仅限环境参数</font></font></h3><a id="user-content-environment-only-parameters" class="anchor" aria-label="永久链接：仅限环境参数" href="#environment-only-parameters"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<ul dir="auto">
+ 
 <li><code>SYSTEM_ROOTURIPATH</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">即设置为</font></font><code>/pdf-app</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将应用程序的根 URI 设置为</font></font><code>localhost:8080/pdf-app</code></li>
 <li><code>SYSTEM_CONNECTIONTIMEOUTMINUTES</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置自定义连接超时值</font></font></li>
 <li><code>DOCKER_ENABLE_SECURITY</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">告诉 docker 下载安全 jar（对于身份验证登录，必须为 true）</font></font></li>
